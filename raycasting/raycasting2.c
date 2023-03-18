@@ -24,9 +24,9 @@ int	get_wall_cordinates(double x, double y, t_data *d)
 
 	map_grid_x = floor(x / TILE);
 	map_grid_y = floor(y / TILE);
-	if (x < 0 || x > d->cub->map_whitd * TILE || y < 0 || y > d->cub->map_hight * TILE)
-		return (0);
-	return (d->cub->map[map_grid_y][map_grid_x] -48 );
+	if (map_grid_y < 0 || map_grid_y >= d->cub->map_hight || map_grid_x < 0 || map_grid_x >= ft_strlen(d->cub->map[map_grid_y]))
+		return 0;
+	return (d->cub->map[map_grid_y][map_grid_x] - 48 );
 }
 
 void	save_smallest_distance(t_cast_ray *casting, int i, t_data *d)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing2.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yobenali <yobenali@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mohamedouizar <mohamedouizar@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 23:35:22 by yobenali          #+#    #+#             */
-/*   Updated: 2023/03/18 02:52:07 by yobenali         ###   ########.fr       */
+/*   Updated: 2023/03/18 22:58:16 by mohamedouiz      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,7 @@ void	ft_copy_map(t_cub3d *cub, int pos)
 	int	i;
 
 	i = 0;
-	while (cub->infile[pos])
+	while (cub->infile[pos] && i < cub->map_len)
 	{
 		cub->map[i] = ft_strdup(cub->infile[pos]);
 		i++;

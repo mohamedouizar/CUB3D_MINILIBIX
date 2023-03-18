@@ -75,6 +75,7 @@ void	render_map(t_data *data)
 	size = TILE;
 	while (i < data->cub->map_len)
 	{
+		printf("%d\n", data->cub->map_len);
 		j = 0;
 		while (j < ft_strlenn(data->cub->map[i]))
 		{

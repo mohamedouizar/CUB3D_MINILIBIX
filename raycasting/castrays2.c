@@ -2,15 +2,18 @@
 
 void	find_v_wall(t_cast_ray *casting, t_data *d)
 {
-	double	wallcontent;
+	double	wallcontent = 0;
 
-	while (casting->next_vert_touch_x >= 0 && \
-		casting->next_vert_touch_x <= WIN_WIDHT & casting->next_vert_touch_y >= 0 \
-		&& casting->next_vert_touch_y <= WIN_HIGHT)
+	while (casting->next_vert_touch_y >= 0 && casting->next_vert_touch_y <= d->cub->map_hight * TILE && 
+			casting->next_vert_touch_x >= 0 && casting->next_vert_touch_x <= d->cub->map_whitd * TILE)
 	{
 		if (casting->left)
 			wallcontent = get_wall_cordinates(casting->next_vert_touch_x + \
 			(-1), casting->next_vert_touch_y, d);
+		else
+			wallcontent = get_wall_cordinates(casting->next_vert_touch_x \
+			, casting->next_vert_touch_y, d);
+		
 		if (wallcontent != 0)
 		{
 			casting->found_v_wall = 1;
@@ -53,17 +56,18 @@ void	find_v_dist(t_data *d, double ray_angle, int i, t_cast_ray *casting)
 
 void	find_h_wall(t_cast_ray *casting, t_data *d)
 {
-	double	wallcontent;
+	double	wallcontent = 0;
 
-	while (casting->next_x_intersect >= 0 && \
-		casting->next_x_intersect <= WIN_WIDHT && \
-		casting->next_y_intersect >= 0 && casting->next_y_intersect <= \
-		WIN_HIGHT)
+	while (casting->next_y_intersect >= 0 && casting->next_y_intersect <= d->cub->map_hight * TILE && 
+			casting->next_x_intersect >= 0 && casting->next_x_intersect <= d->cub->map_whitd * TILE)
 	{
 		if (casting->up)
 			wallcontent = get_wall_cordinates(casting->next_x_intersect, \
 			casting->next_y_intersect + (-1), d);
-	
+		else 
+			wallcontent = get_wall_cordinates(casting->next_x_intersect, \
+			casting->next_y_intersect, d);
+		
 		if (wallcontent != 0)
 		{
 			casting->found_h_wall = 1;

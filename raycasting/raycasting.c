@@ -80,10 +80,10 @@ int	raycasting(t_data *d)
 	if (d->flag == 1)
 		mlx_clear_window(d->mlx, d->win);
 	move_player(d);
-	// render_map(d);
 	// render_player(d);
 	render_floor_roof(d);
 	ft_castrays(d);
+	// render_map(d);
 	mlx_put_image_to_window(d->mlx, d->win, d->img->img, 0, 0);
 	mlx_destroy_image(d->mlx, d->img->img);
 	d->img->img = 0;
