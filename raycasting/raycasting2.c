@@ -23,7 +23,7 @@ int	get_wall_cordinates(double x, double y, t_data *d)
 	int	map_grid_y;
 
 	map_grid_x = floor(x / TILE);
-	map_grid_y = floor(y / TILE);
+	map_grid_y = floor(y / TILE);\
 	if (map_grid_y < 0 || map_grid_y >= d->cub->map_hight || map_grid_x < 0 || map_grid_x >= ft_strlen(d->cub->map[map_grid_y]))
 		return 0;
 	return (d->cub->map[map_grid_y][map_grid_x] - 48 );
