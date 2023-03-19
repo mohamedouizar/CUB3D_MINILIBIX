@@ -6,7 +6,7 @@
 /*   By: mouizar <mouizar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 00:37:39 by yobenali          #+#    #+#             */
-/*   Updated: 2023/03/19 03:25:26 by mouizar          ###   ########.fr       */
+/*   Updated: 2023/03/19 17:31:35 by mouizar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -181,6 +181,7 @@ int				ft_close_win(void);
 int				raycasting(t_data *d);
 int				ft_map_width(char **s);
 int				ft_map_hight(char **s);
+int				player_pos(t_cub3d *cub);
 int				ft_strlenn(const char *s);
 int				mat_len(t_cub3d *cub, int pos);
 int				ft_key_press(int key, t_data *d);
@@ -207,12 +208,12 @@ void			ft_init_data(t_cub3d *cub, t_data *d, t_img *img);
 void			my_mlx_p_put(t_data *data, int x, int y, int color);
 void			ft_walls_check(t_cub3d *cub, int i, int j, int flag);
 void			save_smallest_distance(t_cast_ray *casting, int i, t_data *d);
-double			resize_radians(double angle);
-unsigned int	my_mlx_texture(t_data *data, int x, int y, int i);
 int				get_wall_cordinates(double x, double y, t_data *d);
 void			findvdist(t_data *d, double ray_angle, t_cast_ray *cst);
 void			findhdist(t_data *d, double ray_angle, int i, t_cast_ray *cst);
 void			wallcontentv(t_cast_ray *casting, double *wall, t_data *d);
 void			wallcontenth(t_cast_ray *casting, double *wall, t_data *d);
+double			resize_radians(double angle);
+unsigned int	my_mlx_texture(t_data *data, int x, int y, int i);
 
 #endif

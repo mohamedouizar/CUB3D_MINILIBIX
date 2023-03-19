@@ -6,6 +6,7 @@ SRCS =  main.c \
 	parsing/parsing3.c \
 	parsing/parsing4.c \
 	parsing/parsing5.c \
+	parsing/p_parsing.c \
 	parsing/init_parsing.c \
 	gnl/get_next_line.c \
 	gnl/get_next_line_utils.c \
@@ -24,7 +25,7 @@ CC = @cc
 
 RM = rm -f
 
-CFLAGS = #-Wall -Wextra -Werror#-g -fsanitize=address 
+CFLAGS = -Wall -Wextra -Werror#-g -fsanitize=address 
 
 MLX = -Imlx -lmlx -framework OpenGl -framework Appkit
 
