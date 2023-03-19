@@ -16,7 +16,7 @@ SRCS =  main.c \
 	raycasting/castrays.c \
 	raycasting/castrays2.c \
 	raycasting/player_utils.c \
-	minilibx_opengl_20191021/libmlx.a\
+	#minilibx_opengl_20191021/libmlx.a\
 
 
 
@@ -24,9 +24,9 @@ CC = @cc
 
 RM = rm -f
 
-CFLAGS = -g -fsanitize=address 
+CFLAGS = #-Wall -Wextra -Werror#-g -fsanitize=address 
 
-MLX = -Imlx  -framework OpenGl -framework Appkit
+MLX = -Imlx -lmlx -framework OpenGl -framework Appkit
 
 all : 	${NAME}
 

@@ -12,17 +12,17 @@
 
 #include "cub3d.h"
 
-void	ft_freee(char **ptr)
+void	ft_freee(char	**sr)
 {
 	int	i;
 
 	i = 0;
-	while (ptr[i])
+	while (sr[i])
 	{
-		free(ptr[i]);
+		free(sr[i]);
 		i++;
 	}
-	free(ptr);
+	free(sr);
 }
 
 int	check_ws(char c)
@@ -75,9 +75,6 @@ int	main(int ac, char **av)
 		creat_win(&d, &img);
 		player_init(&d);
 		ft_ray_init(&d);
-		printf(">>>>>>>x%d",d.cub->pos_x);
-		printf(">>>>>>>y%d",d.cub->pos_y);
-		// exit(0);
 		mlx_hook(d.win, 2, 1L << 0, ft_key_press, &d);
 		mlx_hook(d.win, 3, 1L << 1, ft_key_relase, &d);
 		mlx_loop_hook(d.mlx, raycasting, &d);

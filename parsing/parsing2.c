@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing2.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mohamedouizar <mohamedouizar@student.42    +#+  +:+       +#+        */
+/*   By: mouizar <mouizar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 23:35:22 by yobenali          #+#    #+#             */
-/*   Updated: 2023/03/18 22:58:16 by mohamedouiz      ###   ########.fr       */
+/*   Updated: 2023/03/19 03:30:11 by mouizar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ int	player_dire(t_cub3d *cub, int line)
 		{
 			cub->p_direction = cub->map[line][i];
 			cub->map[line][i] = '0';
-			break;
+			break ;
 		}
 		i++;
 	}
